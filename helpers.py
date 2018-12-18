@@ -10,12 +10,12 @@ from sklearn.cluster import KMeans
 from pylab import rcParams
 
 sns.set()
-rcParams['figure.figsize'] = 10,7
 
 def parameter(*args):
     return torch.from_numpy(np.array(args, dtype=np.float32))
 
 def plot(data, true_means=None, z=None):
+    plt.figure(figsize=(10,7))
     # Prep data
     data = pd.DataFrame(data)
     data = data.rename(index=str, columns={0: 'x', 1: 'y', 2: 'comp'})
@@ -40,7 +40,6 @@ def plot(data, true_means=None, z=None):
     ax.set_ylabel("")
     ax.set_ylim(0, 15)
     ax.set_xlim(0, 15)
-
     if z is not None:
         ax.set_title("Generating from: Cluster {}".format(z))
     else:
