@@ -6,4 +6,4 @@ sklearn==0.0
 torch==1.0.0
 matplotlib==3.0.0
 ipython==6.5.0
-jupyter=1.0.0
+jupyter==1.0.0
